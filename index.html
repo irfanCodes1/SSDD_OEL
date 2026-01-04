@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+<h2>Login</h2>
+
+<form onsubmit="validateLogin(); return false;">
+    <label>Username:</label><br>
+    <input type="text" id="username"><br><br>
+    <label>Password:</label><br>
+    <input type="password" id="password"><br><br>
+    <button type="submit">Login</button>
+</form>
+<script>
+function validateLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username === "" || password === "") {
+        alert("Fields are empty");
+        return;
+    }
+    if (password.length < 8) {
+        alert("Password is less than 8 characters");
+        return;
+    }
+    alert("Login successful");
+}
+</script>
+</body>
+</html>
